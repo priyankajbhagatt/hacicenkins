@@ -1,4 +1,4 @@
-@Library('pipeline-library') _
+//@Library('pipeline-library') _
 
  
 
@@ -64,7 +64,7 @@ pipeline {
 
   agent any
 
-  options { timestamps() }
+  //options { timestamps() }
 
   environment {
 
@@ -100,15 +100,15 @@ pipeline {
 
         script{
 
-          withEnv([
+          //withEnv([
 
-            "GIT_ASKPASS=${WORKSPACE}/terraform/environments/askpass.sh",
+           // "GIT_ASKPASS=${WORKSPACE}/terraform/environments/askpass.sh",
 
-          ]) {
+//          ]) {
 
                // TF requires credentials for Azure RM provider.
 
-                withCredentials([azureServicePrincipal(credentialsId: "${AZ_SP_ID}",
+                withCredentials([azureServicePrincipal(credentialsId: 'az-jenkins-sp',
 
                                                 subscriptionIdVariable: 'ARM_SUBSCRIPTION_ID',
 
@@ -118,7 +118,7 @@ pipeline {
 
                                                 tenantIdVariable: 'ARM_TENANT_ID')]) {
 
-                  withCredentials([usernamePassword(credentialsId: 'az-devops-token',
+                  withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials',
 
                                                   passwordVariable: 'GIT_PASSWORD',
 
