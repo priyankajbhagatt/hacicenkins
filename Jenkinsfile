@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
- //       git([url: 'https://github.com/priyankajbhagatt//hacicenkins.git', branch: 'master'])
+       git([url: 'https://github.com/priyankajbhagatt//hacicenkins.git', branch: 'master'])
  	checkout scm
 
       }
@@ -21,7 +21,14 @@ pipeline {
 
           }
       }
-   
+    stage('LOAD IMAGE') {
+      steps{
+     
+      docker image
+
+
+          }
+      }
     
     
   }
