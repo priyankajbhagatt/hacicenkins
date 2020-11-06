@@ -21,15 +21,5 @@ pipeline {
 
           }
       }
-    stage('LOAD IMAGE') {
-      steps{
-     
-      docker image
-
-
-          }
-      }
-    
-    
   }
 }
