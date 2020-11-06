@@ -210,8 +210,6 @@ pipeline {
 
       }
 
-    }
-
  
 
     stage ('tag') {
@@ -247,21 +245,5 @@ pipeline {
     }
 
  
-
+  }}
   }
-
- 
-
-  post {
-
-    always {
-
-      cleanWs()
-
-    }
-
-  }
-
- 
-
-}
